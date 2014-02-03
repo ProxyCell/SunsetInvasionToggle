@@ -1,0 +1,31 @@
+decisions = {
+	toggle_sunset_invasion_on = {
+		allow = {
+			has_dlc = "Sunset Invasion"
+		}
+		potential = {
+			NOT = { has_global_flag = toggle_sunset_invasion }
+		}
+		effect = {
+			set_global_flag = toggle_sunset_invasion
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	toggle_sunset_invasion_off = {
+		allow = {
+			has_dlc = "Sunset Invasion"
+		}
+		potential = {
+			NOT = { has_global_flag = aztec_explorers }
+			has_global_flag = toggle_sunset_invasion
+		}
+		effect = {
+			clr_global_flag = toggle_sunset_invasion
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
